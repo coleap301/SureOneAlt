@@ -334,6 +334,29 @@
         
         .footer-col a:hover { color: var(--primary-blue); }
         
+        /* New precise alignment for footer contact lines */
+        .footer-contact {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            line-height: 1;
+            margin-bottom: 12px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .footer-contact i {
+            color: var(--primary-blue);
+            width: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .footer-contact span {
+            display: inline-block;
+            transform: translateY(1px); /* Fixes optical baseline mismatch */
+        }
+        
         .social-links { display: flex; gap: 16px; margin-top: 20px; justify-content: center; }
         .social-links a {
             width: 40px; height: 40px; background: var(--bg-body); display: flex;
@@ -500,8 +523,8 @@
                 </div>
                 <div class="footer-col">
                     <h4 id="f-contact-title">Contact Us</h4>
-                    <p><i class="fa-solid fa-phone" style="color:var(--primary-blue); width: 20px;"></i> (708) 270-8380</p>
-                    <p><i class="fa-solid fa-envelope" style="color:var(--primary-blue); width: 20px;"></i> Snc@sureonesolutions.com</p>
+                    <div class="footer-contact"><i class="fa-solid fa-phone"></i> <span>(708) 270-8380</span></div>
+                    <div class="footer-contact"><i class="fa-solid fa-envelope"></i> <span>Snc@sureonesolutions.com</span></div>
                 </div>
                 <div class="footer-col">
                     <h4 id="f-area">Service Area</h4>
