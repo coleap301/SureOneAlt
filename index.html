@@ -52,6 +52,30 @@
         }
         .btn-primary:hover { background-color: var(--primary-hover); transform: translateY(-2px); }
 
+        /* Custom File Upload Styling */
+        .file-upload-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 5px;
+        }
+        .custom-file-label {
+            background-color: #f1f5f9;
+            color: var(--text-dark);
+            padding: 10px 20px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .custom-file-label:hover {
+            background-color: #e2e8f0;
+        }
+        #p-photos { display: none; }
+        #file-status { font-size: 0.85rem; color: var(--text-muted); }
+
         .navbar {
             background-color: var(--bg-surface);
             border-bottom: 1px solid var(--border-color);
@@ -277,7 +301,18 @@
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 60px; }
         .footer-col { display: flex; flex-direction: column; align-items: center; }
         .footer-col h4 { font-size: 1.1rem; margin-bottom: 20px; color: var(--text-dark); }
-        .footer-col p, .footer-col a { color: var(--text-muted); text-decoration: none; margin-bottom: 12px; display: block; font-size: 0.95rem; }
+        
+        .footer-col p, .footer-col a { 
+            color: var(--text-muted); 
+            text-decoration: none; 
+            margin-bottom: 12px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 10px;
+            font-size: 0.95rem; 
+        }
+        
         .footer-col a:hover { color: var(--primary-blue); }
         
         .social-links { display: flex; gap: 16px; margin-top: 20px; justify-content: center; }
@@ -409,6 +444,10 @@
                     </div>
                     <div class="form-group full-width">
                         <label id="l-photos">Include Photos (Optional)</label>
+                        <div class="file-upload-wrapper">
+                            <label for="p-photos" class="custom-file-label" id="btn-choose">Choose Photos</label>
+                            <span id="file-status">No files selected</span>
+                        </div>
                         <input type="file" id="p-photos" accept="image/*" multiple>
                         <p class="file-limit-note" id="p-photo-limit">Maximum 5 photos. Each file cannot exceed 10MB.</p>
                         <div id="photo-preview" class="photo-preview-container"></div>
@@ -431,8 +470,8 @@
                     <p id="f-tagline" style="font-weight: 600; color: var(--text-dark);">Licensed • Insured • Professional</p>
                     <p id="f-desc">Chicago's premier property maintenance provider.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/186J6U5bET/?mibextid=wwXIfr" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/sureone_solutions?igsh=azRwbzExZ2I3aDRk&utm_source=qr" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -441,8 +480,8 @@
                     <p><i class="fa-solid fa-envelope" style="color:var(--primary-blue); width: 20px;"></i> Snc@sureonesolutions.com</p>
                 </div>
                 <div class="footer-col">
-                    <h4 id="f-area">Service Areas</h4>
-                    <p id="area1">Chicago City Limits</p>
+                    <h4 id="f-area">Service Area</h4>
+                    <p id="area1">Chicago</p>
                     <p id="area2">Northwest Suburbs</p>
                     <p id="area3">South Suburbs</p>
                     <p id="area4">Western Suburbs</p>
@@ -459,7 +498,7 @@
             en: {
                 heroBadge: "Professional Property Services",
                 heroTitle: "Premier Property Solutions & Maintenance",
-                heroText: "SureOne Solutions is the premier provider for expert clean-outs, junk removal, and precision cleaning. We transform spaces with efficiency and reliability.",
+                heroText: "SureOne Solutions is Chicago's premier provider for expert clean-outs, junk removal, and precision cleaning. We transform spaces with efficiency and reliability.",
                 heroBtn: "Request a Free Quote",
                 servicesTitle: "Our Expertise",
                 servicesSubtitle: "Tailored solutions for residential and commercial properties.",
@@ -472,12 +511,15 @@
                 quoteTitle: "Start Your Project",
                 lFname: "First Name", lLname: "Last Name", lEmail: "Email Address", lPhone: "Phone Number",
                 lSelServices: "Selected Services", lDetails: "Project Details", lPhotos: "Include Photos (Optional)",
+                btnChoose: "Choose Photos",
+                noFiles: "No files selected",
+                filesCount: "files selected",
                 pPhotoLimit: "Maximum 5 photos. Each file cannot exceed 10MB.",
                 fSubmit: "Submit Request",
                 fTagline: "Licensed • Insured • Professional",
                 fDesc: "Chicago's premier property maintenance provider.",
-                fContactTitle: "Contact Us", fArea: "Service Areas",
-                area1: "Chicago City Limits", area2: "Northwest Suburbs", area3: "South Suburbs", area4: "Western Suburbs",
+                fContactTitle: "Contact Us", fArea: "Service Area",
+                area1: "Chicago", area2: "Northwest Suburbs", area3: "South Suburbs", area4: "Western Suburbs",
                 fCopy: "© 2026 SureOne Solutions, LLC. All Rights Reserved."
             },
             es: {
@@ -496,12 +538,15 @@
                 quoteTitle: "Inicie su Proyecto",
                 lFname: "Nombre", lLname: "Apellido", lEmail: "Correo Electrónico", lPhone: "Número de Teléfono",
                 lSelServices: "Servicios Seleccionados", lDetails: "Detalles del Proyecto", lPhotos: "Incluir Fotos (Opcional)",
+                btnChoose: "Elegir Fotos",
+                noFiles: "Ningún archivo seleccionado",
+                filesCount: "archivos seleccionados",
                 pPhotoLimit: "Máximo 5 fotos. Cada archivo no puede exceder los 10MB.",
                 fSubmit: "Enviar Solicitud",
                 fTagline: "Licenciado • Asegurado • Profesional",
                 fDesc: "El principal proveedor de mantenimiento de propiedades de Chicago.",
-                fContactTitle: "Contáctenos", fArea: "Áreas de Servicio",
-                area1: "Límites de la ciudad de Chicago", area2: "Suburbios del noroeste", area3: "Suburbios del sur", area4: "Suburbios del oeste",
+                fContactTitle: "Contáctenos", fArea: "Área de Servicio",
+                area1: "Chicago", area2: "Suburbios del noroeste", area3: "Suburbios del sur", area4: "Suburbios del oeste",
                 fCopy: "© 2026 SureOne Solutions, LLC. Todos los derechos reservados."
             }
         };
@@ -522,6 +567,7 @@
             document.getElementById('l-sel-services').innerText = data.lSelServices;
             document.getElementById('l-details').innerText = data.lDetails;
             document.getElementById('l-photos').innerText = data.lPhotos;
+            document.getElementById('btn-choose').innerText = data.btnChoose;
             document.getElementById('p-photo-limit').innerText = data.pPhotoLimit;
             document.getElementById('f-submit').innerText = data.fSubmit;
             document.getElementById('f-tagline').innerText = data.fTagline;
@@ -533,6 +579,8 @@
             document.getElementById('area3').innerText = data.area3;
             document.getElementById('area4').innerText = data.area4;
             document.getElementById('f-copy').innerText = data.fCopy;
+
+            updateFileStatus();
 
             document.querySelectorAll('[data-translate]').forEach(el => {
                 const key = el.getAttribute('data-translate').replace(/-([a-z])/g, (g) => g[1].toUpperCase());
@@ -610,7 +658,18 @@
 
         const photoInput = document.getElementById('p-photos');
         const previewContainer = document.getElementById('photo-preview');
+        const fileStatus = document.getElementById('file-status');
         let uploadedFiles = [];
+
+        function updateFileStatus() {
+            const isSpanish = langBtn.innerText === "English";
+            const data = isSpanish ? translations.es : translations.en;
+            if (uploadedFiles.length === 0) {
+                fileStatus.innerText = data.noFiles;
+            } else {
+                fileStatus.innerText = `${uploadedFiles.length} ${data.filesCount}`;
+            }
+        }
 
         photoInput.addEventListener('change', (e) => {
             const files = Array.from(e.target.files);
@@ -628,6 +687,7 @@
                 reader.readAsDataURL(file);
             });
             photoInput.value = '';
+            updateFileStatus();
         });
 
         window.removeFile = (fileName) => {
@@ -643,6 +703,7 @@
                 };
                 reader.readAsDataURL(file);
             });
+            updateFileStatus();
         };
     </script>
 </body>
