@@ -136,11 +136,19 @@
         }
         #lang-toggle:hover { background: var(--primary-blue); color: #fff; }
 
+        /* --- UPDATED HERO SECTION --- */
         .hero {
-            padding: 180px 0 100px;
-            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            padding: 180px 0 140px;
+            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
+                        url('AF4D2EBF-C7BB-4F57-A8B8-F34827E8F75E.jpg');
+            background-size: cover;
+            /* 92% shifts the image down to hide the white space at the bottom of the photo */
+            background-position: center 92%; 
+            background-repeat: no-repeat;
             border-bottom: 1px solid var(--border-color);
         }
+        /* --- END UPDATED HERO SECTION --- */
+
         .hero-content {
             max-width: 800px; margin: 0 auto; text-align: center;
         }
@@ -434,7 +442,6 @@
 
     <section class="hero">
         <div class="container hero-content reveal">
-            <span class="badge" id="hero-badge">Professional Property Services</span>
             <h1 id="hero-title">Premier Property Solutions & Maintenance</h1>
             <p id="hero-text">SureOne Solutions is Chicago's premier provider for expert clean-outs, junk removal, and precision cleaning. We transform spaces with efficiency and reliability.</p>
             <a href="#quote" class="btn-primary" id="hero-btn">Request a Free Quote</a>
