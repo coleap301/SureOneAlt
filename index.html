@@ -52,7 +52,6 @@
         }
         .btn-primary:hover { background-color: var(--primary-hover); transform: translateY(-2px); }
 
-        /* Custom File Upload Styling */
         .file-upload-wrapper {
             display: flex;
             align-items: center;
@@ -168,6 +167,7 @@
             transition: var(--transition); 
             cursor: pointer;
             position: relative;
+            text-align: center;
         }
         
         .service-card:hover {
@@ -186,7 +186,8 @@
             width: 60px; height: 60px; background-color: #eff6ff;
             color: var(--primary-blue); border-radius: var(--radius-md);
             display: flex; align-items: center; justify-content: center;
-            font-size: 1.5rem; margin-bottom: 24px;
+            font-size: 1.5rem; 
+            margin: 0 auto 24px; 
             transition: var(--transition);
         }
         
@@ -316,33 +317,52 @@
             justify-content: center;
         }
 
-        .footer { background-color: var(--bg-surface); border-top: 1px solid var(--border-color); padding: 80px 0 40px; text-align: center; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 60px; }
-        .footer-col { display: flex; flex-direction: column; align-items: center; }
-        .footer-col h4 { font-size: 1.1rem; margin-bottom: 20px; color: var(--text-dark); }
+        /* --- Updated Footer Styles --- */
+        .footer { 
+            background-color: var(--bg-surface); 
+            border-top: 1px solid var(--border-color); 
+            padding: 80px 0 40px; 
+            text-align: center; 
+        }
+        .footer-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); /* Forces even spacing across columns */
+            gap: 40px; 
+            margin-bottom: 60px; 
+        }
+        .footer-col { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+        }
+        .footer-col h4 { 
+            font-size: 1.1rem; 
+            margin-bottom: 24px; 
+            color: var(--text-dark); 
+        }
         
-        .footer-col p, .footer-col a { 
-            color: var(--text-muted); 
+        .footer-col p, .footer-col span, .footer-col a { 
+            color: var(--text-dark); /* Set to match phone number/email color */
             text-decoration: none; 
-            margin-bottom: 12px; 
+            margin-bottom: 16px; /* Increased for even vertical spacing */
             display: flex; 
             align-items: center; 
             justify-content: center; 
             gap: 10px;
             font-size: 0.95rem; 
+            font-weight: 500;
         }
         
         .footer-col a:hover { color: var(--primary-blue); }
         
-        /* New precise alignment for footer contact lines */
         .footer-contact {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
             line-height: 1;
-            margin-bottom: 12px;
-            color: var(--text-muted);
+            margin-bottom: 16px;
+            color: var(--text-dark);
             font-size: 0.95rem;
         }
         .footer-contact i {
@@ -354,21 +374,33 @@
         }
         .footer-contact span {
             display: inline-block;
-            transform: translateY(1px); /* Fixes optical baseline mismatch */
+            transform: translateY(1px);
+            margin-bottom: 0;
         }
         
-        .social-links { display: flex; gap: 16px; margin-top: 20px; justify-content: center; }
+        .social-links { display: flex; gap: 16px; margin-top: 10px; justify-content: center; }
         .social-links a {
             width: 40px; height: 40px; background: var(--bg-body); display: flex;
             align-items: center; justify-content: center; border-radius: 50%;
             color: var(--text-dark); transition: var(--transition); border: 1px solid var(--border-color);
+            margin-bottom: 0;
         }
         .social-links a:hover { background: var(--primary-blue); color: #fff; border-color: var(--primary-blue); }
 
-        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.9rem; }
+        .footer-bottom { 
+            text-align: center; 
+            padding-top: 30px; 
+            border-top: 1px solid var(--border-color); 
+            color: var(--text-muted); 
+            font-size: 0.9rem; 
+        }
 
         .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 992px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 50px; }
+        }
 
         @media (max-width: 768px) {
             .nav-actions { gap: 15px; }
@@ -514,7 +546,7 @@
                     <div class="footer-logo-wrapper" style="margin-bottom: 20px;">
                         <img src="image_0.png" alt="SureOne Solutions LLC Logo" class="logo-img" style="max-height: 80px;"> 
                     </div>
-                    <p id="f-tagline" style="font-weight: 600; color: var(--text-dark);">Licensed • Insured • Professional</p>
+                    <p id="f-tagline" style="font-weight: 700;">Licensed • Insured • Professional</p>
                     <p id="f-desc">Chicago's premier property maintenance provider.</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/share/186J6U5bET/?mibextid=wwXIfr" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
