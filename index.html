@@ -136,18 +136,15 @@
         }
         #lang-toggle:hover { background: var(--primary-blue); color: #fff; }
 
-        /* --- UPDATED HERO SECTION --- */
         .hero {
             padding: 180px 0 140px;
             background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
                         url('AF4D2EBF-C7BB-4F57-A8B8-F34827E8F75E.jpg');
             background-size: cover;
-            /* 92% shifts the image down to hide the white space at the bottom of the photo */
             background-position: center 92%; 
             background-repeat: no-repeat;
             border-bottom: 1px solid var(--border-color);
         }
-        /* --- END UPDATED HERO SECTION --- */
 
         .hero-content {
             max-width: 800px; margin: 0 auto; text-align: center;
@@ -325,7 +322,6 @@
             justify-content: center;
         }
 
-        /* --- Updated Footer Styles --- */
         .footer { 
             background-color: var(--bg-surface); 
             border-top: 1px solid var(--border-color); 
@@ -334,7 +330,7 @@
         }
         .footer-grid { 
             display: grid; 
-            grid-template-columns: repeat(3, 1fr); /* Forces even spacing across columns */
+            grid-template-columns: repeat(3, 1fr); 
             gap: 40px; 
             margin-bottom: 60px; 
         }
@@ -350,9 +346,9 @@
         }
         
         .footer-col p, .footer-col span, .footer-col a { 
-            color: var(--text-dark); /* Set to match phone number/email color */
+            color: var(--text-dark); 
             text-decoration: none; 
-            margin-bottom: 16px; /* Increased for even vertical spacing */
+            margin-bottom: 16px; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
@@ -442,8 +438,8 @@
 
     <section class="hero">
         <div class="container hero-content reveal">
-            <h1 id="hero-title">Premier Property Solutions & Maintenance</h1>
-            <p id="hero-text">SureOne Solutions is Chicago's premier provider for expert clean-outs, junk removal, and precision cleaning. We transform spaces with efficiency and reliability.</p>
+            <h1 id="hero-title">Chicagoland's Elite Junk Removal Service</h1>
+            <p id="hero-text">SureOne Solutions is the premier provider for expert clean-outs, junk removal, and precision cleaning. We transform spaces with efficiency and reliability.</p>
             <a href="#quote" class="btn-primary" id="hero-btn">Request a Free Quote</a>
         </div>
     </section>
@@ -459,7 +455,7 @@
                 <div class="service-card reveal" data-name="Full Clean-outs" onclick="toggleService(this)">
                     <div class="service-icon"><i class="fa-solid fa-house-chimney"></i></div>
                     <h3 data-translate="s1-title">Full Clean-outs</h3>
-                    <p data-translate="s1-desc">Complete clearing of basements, garages, offices, and large estates.</p>
+                    <p data-translate="s1-desc">Complete clearing of basements, garages, offices, and estate clearing.</p>
                 </div>
                 <div class="service-card reveal" data-name="Junk Removal" onclick="toggleService(this)">
                     <div class="service-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
@@ -469,12 +465,12 @@
                 <div class="service-card reveal" data-name="Deep Cleaning" onclick="toggleService(this)">
                     <div class="service-icon"><i class="fa-solid fa-broom"></i></div>
                     <h3 data-translate="s3-title">Deep Cleaning</h3>
-                    <p data-translate="s3-desc">Intensive sanitization for move-ins, move-outs, and post-construction.</p>
+                    <p data-translate="s3-desc">Move-in/out and property restoration cleaning.</p>
                 </div>
                 <div class="service-card reveal" data-name="Light Demolition" onclick="toggleService(this)">
                     <div class="service-icon"><i class="fa-solid fa-hammer"></i></div>
                     <h3 data-translate="s4-title">Light Demolition</h3>
-                    <p data-translate="s4-desc">Safe, controlled teardowns of small structures and site prep.</p>
+                    <p data-translate="s4-desc">Safe, controlled teardowns of small structures.</p>
                 </div>
                 <div class="service-card reveal" data-name="Light Hauling" onclick="toggleService(this)">
                     <div class="service-icon"><i class="fa-solid fa-truck"></i></div>
@@ -554,7 +550,7 @@
                         <img src="image_0.png" alt="SureOne Solutions LLC Logo" class="logo-img" style="max-height: 80px;"> 
                     </div>
                     <p id="f-tagline" style="font-weight: 700;">Licensed • Insured • Professional</p>
-                    <p id="f-desc">Chicago's premier property maintenance provider.</p>
+                    <p id="f-desc">Chicagoland's Elite Junk Removal Choice</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/share/186J6U5bET/?mibextid=wwXIfr" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/sureone_solutions?igsh=azRwbzExZ2I3aDRk&utm_source=qr" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -582,16 +578,15 @@
     <script>
         const translations = {
             en: {
-                heroBadge: "Professional Property Services",
-                heroTitle: "Premier Property Solutions & Maintenance",
-                heroText: "SureOne Solutions is Chicago's premier provider for expert clean-outs, junk removal, and precision cleaning. We transform spaces with efficiency and reliability.",
+                heroTitle: "Chicagoland's Elite Junk Removal Service",
+                heroText: "SureOne Solutions is the premier provider for expert clean-outs, junk removal, and precision cleaning. We transform spaces with efficiency and reliability.",
                 heroBtn: "Request a Free Quote",
                 servicesTitle: "Our Expertise",
                 servicesSubtitle: "Tailored solutions for residential and commercial properties.",
-                s1Title: "Full Clean-outs", s1Desc: "Complete clearing of basements, garages, offices, and large estates.",
+                s1Title: "Full Clean-outs", s1Desc: "Complete clearing of basements, garages, offices, and estate clearing.",
                 s2Title: "Junk Removal", s2Desc: "Efficient, responsible removal of appliances, furniture, and debris.",
-                s3Title: "Deep Cleaning", s3Desc: "Intensive sanitization for move-ins, move-outs, and post-construction.",
-                s4Title: "Light Demolition", s4Desc: "Safe, controlled teardowns of small structures and site prep.",
+                s3Title: "Deep Cleaning", s3Desc: "Move-in/out and property restoration cleaning.",
+                s4Title: "Light Demolition", s4Desc: "Safe, controlled teardowns of small structures.",
                 s5Title: "Light Hauling", s5Desc: "Reliable point-to-point transport for materials and small loads.",
                 s6Title: "Snow Removal", s6Desc: "Prompt winter maintenance for driveways, walkways, and parking lots.",
                 quoteTitle: "Start Your Project",
@@ -603,43 +598,43 @@
                 pPhotoLimit: "Maximum 5 photos. Each file cannot exceed 10MB.",
                 fSubmit: "Submit Request",
                 fTagline: "Licensed • Insured • Professional",
-                fDesc: "Chicago's premier property maintenance provider.",
+                fDesc: "Chicagoland's Elite Junk Removal Choice",
                 fContactTitle: "Contact Us", fArea: "Service Area",
                 area1: "Chicago", area2: "Northwest Suburbs", area3: "South Suburbs", area4: "Western Suburbs",
                 fCopy: "© 2026 SureOne Solutions, LLC. All Rights Reserved."
             },
             es: {
-                heroBadge: "Servicios Profesionales de Propiedad",
-                heroTitle: "Soluciones Premier de Propiedad y Mantenimiento",
-                heroText: "SureOne Solutions es el proveedor principal de limpieza experta, eliminación de basura y limpieza de precisión. Transformamos espacios con eficiencia y confiabilidad.",
+                heroTitle: "Servicio de Limpieza de Escombros Elite en Chicagoland",
+                heroText: "SureOne Solutions es el proveedor líder en limpieza experta, eliminación de escombros y limpieza de precisión. Transformamos espacios con eficiencia y confiabilidad.",
                 heroBtn: "Solicite una Cotización Gratis",
                 servicesTitle: "Nuestra Experiencia",
                 servicesSubtitle: "Soluciones a medida para propiedades residenciales y comerciales.",
-                s1Title: "Limpieza Completa", s1Desc: "Limpieza total de sótanos, garajes, oficinas y grandes fincas.",
-                s2Title: "Eliminación de Basura", s2Desc: "Eliminación eficiente y responsable de electrodomésticos, muebles y escombros.",
-                s3Title: "Limpieza Profunda", s3Desc: "Desinfección intensiva para mudanzas y post-construcción.",
-                s4Title: "Demolición Ligera", s4Desc: "Desmontajes seguros y controlados de estructuras pequeñas.",
+                s1Title: "Limpiezas Completas", s1Desc: "Limpieza total de sótanos, garajes, oficinas y liquidación de propiedades.",
+                s2Title: "Eliminación de Basura", s2Desc: "Retiro eficiente y responsable de electrodomésticos, muebles y escombros.",
+                s3Title: "Limpieza Profunda", s3Desc: "Limpieza para mudanzas y restauración de propiedades.",
+                s4Title: "Demolición Ligera", s4Desc: "Desmantelamiento seguro y controlado de estructuras pequeñas.",
                 s5Title: "Transporte Ligero", s5Desc: "Transporte confiable punto a punto para materiales y cargas pequeñas.",
-                s6Title: "Limpieza de Nieve", s6Desc: "Mantenimiento invernal rápido para entradas y estacionamientos.",
+                s6Title: "Limpieza de Nieve", s6Desc: "Mantenimiento invernal rápido para entradas, aceras y estacionamientos.",
                 quoteTitle: "Inicie su Proyecto",
-                lFname: "Nombre", lLname: "Apellido", lEmail: "Correo Electrónico", lPhone: "Número de Teléfono",
+                lFname: "Nombre", lLname: "Apellido", lEmail: "Correo Electrónico", lPhone: "Teléfono",
                 lSelServices: "Servicios Seleccionados", lDetails: "Detalles del Proyecto", lPhotos: "Incluir Fotos (Opcional)",
                 btnChoose: "Elegir Fotos",
-                noFiles: "Ningún archivo seleccionado",
+                noFiles: "No hay archivos seleccionados",
                 filesCount: "archivos seleccionados",
                 pPhotoLimit: "Máximo 5 fotos. Cada archivo no puede exceder los 10MB.",
                 fSubmit: "Enviar Solicitud",
-                fTagline: "Licenciado • Asegurado • Profesional",
-                fDesc: "El principal proveedor de mantenimiento de propiedades de Chicago.",
+                fTagline: "Licenciados • Asegurados • Profesionales",
+                fDesc: "La opción de limpieza de escombros de élite en Chicagoland",
                 fContactTitle: "Contáctenos", fArea: "Área de Servicio",
-                area1: "Chicago", area2: "Suburbios del noroeste", area3: "Suburbios del sur", area4: "Suburbios del oeste",
+                area1: "Chicago", area2: "Suburbios del Noroeste", area3: "Suburbios del Sur", area4: "Suburbios del Oeste",
                 fCopy: "© 2026 SureOne Solutions, LLC. Todos los derechos reservados."
             }
         };
 
         function setLanguage(lang) {
             const data = translations[lang];
-            document.getElementById('hero-badge').innerText = data.heroBadge;
+            
+            // Basic text replacements
             document.getElementById('hero-title').innerText = data.heroTitle;
             document.getElementById('hero-text').innerText = data.heroText;
             document.getElementById('hero-btn').innerText = data.heroBtn;
@@ -668,9 +663,12 @@
 
             updateFileStatus();
 
+            // Data attribute translation
             document.querySelectorAll('[data-translate]').forEach(el => {
                 const key = el.getAttribute('data-translate').replace(/-([a-z])/g, (g) => g[1].toUpperCase());
-                el.innerText = data[key];
+                if (data[key]) {
+                    el.innerText = data[key];
+                }
             });
             updateDetails();
         }
