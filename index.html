@@ -77,8 +77,10 @@
         #file-status { font-size: 0.85rem; color: var(--text-muted); }
 
         .navbar {
-            background-color: var(--bg-surface);
-            border-bottom: 1px solid var(--border-color);
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.5);
             position: fixed; width: 100%; top: 0; z-index: 1000;
             box-shadow: var(--shadow-sm);
         }
@@ -108,7 +110,15 @@
         
         .nav-actions { display: flex; align-items: center; gap: 20px; }
         .phone-link { color: var(--text-dark); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; }
-        .phone-link i { color: var(--primary-blue); }
+        
+        /* Fix for phone icon alignment on mobile */
+        .phone-link i { 
+            color: var(--primary-blue); 
+            display: inline-flex; 
+            align-items: center; 
+            vertical-align: middle; 
+        }
+        
         .phone-link:hover { color: var(--primary-blue); }
 
         #lang-toggle {
