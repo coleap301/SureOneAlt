@@ -109,14 +109,23 @@
         .logo-img:hover { opacity: 0.9; }
         
         .nav-actions { display: flex; align-items: center; gap: 20px; }
-        .phone-link { color: var(--text-dark); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; }
         
-        /* Fix for phone icon alignment on mobile */
-        .phone-link i { 
-            color: var(--primary-blue); 
+        .phone-link { 
+            color: var(--text-dark); 
+            text-decoration: none; 
+            font-weight: 600; 
             display: inline-flex; 
             align-items: center; 
-            vertical-align: middle; 
+            gap: 8px;
+            line-height: 1;
+        }
+        
+        .phone-link i { 
+            color: var(--primary-blue); 
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            margin-bottom: 1px;
         }
         
         .phone-link:hover { color: var(--primary-blue); }
@@ -339,7 +348,9 @@
         .reveal.active { opacity: 1; transform: translateY(0); }
 
         @media (max-width: 768px) {
+            .nav-actions { gap: 15px; }
             .nav-actions .phone-link span { display: none; }
+            .phone-link { padding: 8px; }
             .hero { padding: 140px 0 60px; }
             .nav-container { height: 80px; }
             .logo-img { max-height: 55px; }
@@ -357,7 +368,10 @@
                 <img src="image_0.png" alt="SureOne Solutions LLC Logo" class="logo-img">
             </a>
             <div class="nav-actions">
-                <a href="tel:7082708380" class="phone-link"><i class="fa-solid fa-phone"></i> <span>(708) 270-8380</span></a>
+                <a href="tel:7082708380" class="phone-link">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>(708) 270-8380</span>
+                </a>
                 <button id="lang-toggle">Español</button>
             </div>
         </div>
