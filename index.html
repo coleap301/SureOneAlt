@@ -48,6 +48,7 @@
             padding: 14px 28px; border-radius: var(--radius-md);
             text-decoration: none; font-weight: 600; border: none;
             cursor: pointer; transition: var(--transition);
+            text-align: center;
         }
         .btn-primary:hover { background-color: var(--primary-hover); transform: translateY(-2px); }
 
@@ -75,8 +76,11 @@
             height: auto;
             max-height: 80px;
             width: auto;
-            image-rendering: -webkit-optimize-contrast; 
+            border-radius: var(--radius-md);
+            image-rendering: -webkit-optimize-contrast;
+            transition: var(--transition);
         }
+        .logo-img:hover { opacity: 0.9; }
         
         .nav-actions { display: flex; align-items: center; gap: 20px; }
         .phone-link { color: var(--text-dark); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; }
@@ -84,11 +88,11 @@
         .phone-link:hover { color: var(--primary-blue); }
 
         #lang-toggle {
-            background: transparent; color: var(--text-muted); border: 1px solid var(--border-color);
-            padding: 6px 12px; border-radius: var(--radius-md); font-weight: 500;
+            background: transparent; color: var(--text-dark); border: 1px solid var(--primary-blue);
+            padding: 6px 16px; border-radius: var(--radius-md); font-weight: 600;
             font-size: 0.85rem; cursor: pointer; transition: var(--transition);
         }
-        #lang-toggle:hover { background: var(--bg-body); color: var(--text-dark); }
+        #lang-toggle:hover { background: var(--primary-blue); color: #fff; }
 
         .hero {
             padding: 180px 0 100px;
@@ -152,22 +156,51 @@
         .service-card p { color: var(--text-muted); font-size: 0.95rem; }
 
         .quote-section { background-color: var(--text-dark); color: #fff; }
-        .quote-wrapper {
-            background: var(--bg-surface); color: var(--text-dark);
-            border-radius: var(--radius-lg); padding: 50px;
-            max-width: 800px; margin: 0 auto; box-shadow: var(--shadow-md);
-        }
-        .quote-wrapper h2 { margin-bottom: 30px; font-size: 2rem; }
         
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
-        .form-group { display: flex; flex-direction: column; gap: 8px; }
-        .form-group.full-width { grid-column: 1 / -1; }
+        .quote-wrapper {
+            background: var(--bg-surface); 
+            color: var(--text-dark);
+            border-radius: var(--radius-lg); 
+            padding: 50px;
+            max-width: 800px; 
+            margin: 0 auto; 
+            box-shadow: var(--shadow-md);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .quote-wrapper h2 { 
+            margin-bottom: 30px; 
+            font-size: 2rem; 
+            width: 100%;
+        }
+        
+        .form-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 24px; 
+            margin-bottom: 24px; 
+            width: 100%;
+        }
+
+        .form-group { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 8px; 
+            width: 100%; 
+        }
+
+        .form-group.full-width { 
+            grid-column: 1 / -1; 
+        }
         
         .form-group label { font-size: 0.9rem; font-weight: 600; color: var(--text-dark); }
         .form-group input, .form-group textarea {
             padding: 14px 16px; border: 1px solid var(--border-color);
             border-radius: var(--radius-md); font-family: 'Inter', sans-serif;
             font-size: 1rem; transition: var(--transition); background: var(--bg-body);
+            width: 100%;
         }
         .form-group input:focus, .form-group textarea:focus {
             outline: none; border-color: var(--primary-blue); background: #fff;
@@ -196,6 +229,12 @@
         }
         .service-option:hover { background: #fff; }
         .service-option input { cursor: pointer; width: 18px; height: 18px; accent-color: var(--primary-blue); }
+
+        .btn-primary.submit-btn {
+            width: 100%;
+            font-size: 1.1rem;
+            display: block;
+        }
 
         .file-limit-note { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
         .photo-preview-container { 
@@ -269,7 +308,7 @@
 
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="logo-link">
+            <a href="#" class="logo-link" aria-label="SureOne Solutions Home">
                 <img src="image_0.png" alt="SureOne Solutions LLC Logo" class="logo-img">
             </a>
             <div class="nav-actions">
@@ -337,19 +376,19 @@
                 <div class="form-grid">
                     <div class="form-group">
                         <label id="l-fname">First Name</label>
-                        <input type="text" id="p-fname" placeholder="John">
+                        <input type="text" id="p-fname" placeholder="John" aria-required="true">
                     </div>
                     <div class="form-group">
                         <label id="l-lname">Last Name</label>
-                        <input type="text" id="p-lname" placeholder="Doe">
+                        <input type="text" id="p-lname" placeholder="Doe" aria-required="true">
                     </div>
                     <div class="form-group">
                         <label id="l-email">Email Address</label>
-                        <input type="email" id="p-email" placeholder="john@example.com">
+                        <input type="email" id="p-email" placeholder="john@example.com" aria-required="true">
                     </div>
                     <div class="form-group">
                         <label id="l-phone">Phone Number</label>
-                        <input type="tel" id="p-phone" placeholder="(000) 000-0000" maxlength="14">
+                        <input type="tel" id="p-phone" placeholder="(000) 000-0000" maxlength="14" aria-required="true">
                     </div>
                     
                     <div class="form-group full-width">
@@ -375,7 +414,7 @@
                         <div id="photo-preview" class="photo-preview-container"></div>
                     </div>
                     <div class="form-group full-width">
-                        <button class="btn-primary" style="width: 100%; font-size: 1.1rem;" id="f-submit">Submit Request</button>
+                        <button class="btn-primary submit-btn" id="f-submit">Submit Request</button>
                     </div>
                 </div>
             </div>
@@ -392,8 +431,8 @@
                     <p id="f-tagline" style="font-weight: 600; color: var(--text-dark);">Licensed • Insured • Professional</p>
                     <p id="f-desc">Chicago's premier property maintenance provider.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -416,7 +455,6 @@
     </footer>
 
     <script>
-        // TRANSLATION DATA
         const translations = {
             en: {
                 heroBadge: "Professional Property Services",
@@ -496,11 +534,11 @@
             document.getElementById('area4').innerText = data.area4;
             document.getElementById('f-copy').innerText = data.fCopy;
 
-            // Handle elements with data-translate attributes (Cards and form options)
             document.querySelectorAll('[data-translate]').forEach(el => {
                 const key = el.getAttribute('data-translate').replace(/-([a-z])/g, (g) => g[1].toUpperCase());
                 el.innerText = data[key];
             });
+            updateDetails();
         }
 
         const langBtn = document.getElementById('lang-toggle');
@@ -510,7 +548,6 @@
             langBtn.innerText = currentLang === "es" ? "English" : "Español";
         });
 
-        // Scroll Animation
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) entry.target.classList.add('active');
@@ -518,14 +555,12 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach((el) => { observer.observe(el); });
 
-        // Phone Formatting
         const phoneInput = document.getElementById('p-phone');
         phoneInput.addEventListener('input', function(e) {
             let x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
             e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
         });
 
-        // Service Logic
         let selectedServices = [];
 
         function toggleService(element) {
@@ -561,8 +596,10 @@
 
         function updateDetails() {
             const detailsArea = document.getElementById('p-details');
-            const prefix = langBtn.innerText === "English" ? "Me interesan los siguientes servicios: " : "I am interested in the following services: ";
-            const suffix = langBtn.innerText === "English" ? ".\n\nDetalles adicionales: " : ".\n\nAdditional details: ";
+            const isSpanish = langBtn.innerText === "English"; 
+            
+            const prefix = isSpanish ? "Me interesan los siguientes servicios: " : "I am interested in the following services: ";
+            const suffix = isSpanish ? ".\n\nDetalles adicionales: " : ".\n\nAdditional details: ";
             
             if (selectedServices.length > 0) {
                 detailsArea.value = prefix + selectedServices.join(', ') + suffix;
@@ -571,7 +608,6 @@
             }
         }
 
-        // Photo Upload logic
         const photoInput = document.getElementById('p-photos');
         const previewContainer = document.getElementById('photo-preview');
         let uploadedFiles = [];
@@ -586,7 +622,7 @@
                 reader.onload = (event) => {
                     const div = document.createElement('div');
                     div.className = 'preview-item';
-                    div.innerHTML = `<img src="${event.target.result}"><button class="remove-photo" onclick="removeFile('${file.name}')">×</button>`;
+                    div.innerHTML = `<img src="${event.target.result}"><button class="remove-photo" onclick="removeFile('${file.name}')" aria-label="Remove photo">×</button>`;
                     previewContainer.appendChild(div);
                 };
                 reader.readAsDataURL(file);
