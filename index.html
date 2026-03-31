@@ -455,7 +455,7 @@
                 <div class="service-card reveal" data-name="Full Clean-outs" onclick="toggleService(this)">
                     <div class="service-icon"><i class="fa-solid fa-house-chimney"></i></div>
                     <h3 data-translate="s1-title">Full Clean-outs</h3>
-                    <p data-translate="s1-desc">Complete clearing of basements, garages, offices, and estate clearing.</p>
+                    <p data-translate="s1-desc">Complete clearing of basements, garages, and offices.</p>
                 </div>
                 <div class="service-card reveal" data-name="Junk Removal" onclick="toggleService(this)">
                     <div class="service-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
@@ -583,7 +583,7 @@
                 heroBtn: "Request a Free Quote",
                 servicesTitle: "Our Expertise",
                 servicesSubtitle: "Tailored solutions for residential and commercial properties.",
-                s1Title: "Full Clean-outs", s1Desc: "Complete clearing of basements, garages, offices, and estate clearing.",
+                s1Title: "Full Clean-outs", s1Desc: "Complete clearing of basements, garages, and offices.",
                 s2Title: "Junk Removal", s2Desc: "Efficient, responsible removal of appliances, furniture, and debris.",
                 s3Title: "Deep Cleaning", s3Desc: "Move-in/out and property restoration cleaning.",
                 s4Title: "Light Demolition", s4Desc: "Safe, controlled teardowns of small structures.",
@@ -592,6 +592,7 @@
                 quoteTitle: "Start Your Project",
                 lFname: "First Name", lLname: "Last Name", lEmail: "Email Address", lPhone: "Phone Number",
                 lSelServices: "Selected Services", lDetails: "Project Details", lPhotos: "Include Photos (Optional)",
+                pDetailsPlaceholder: "Please describe your project...",
                 btnChoose: "Choose Photos",
                 noFiles: "No files selected",
                 filesCount: "files selected",
@@ -604,27 +605,28 @@
                 fCopy: "© 2026 SureOne Solutions, LLC. All Rights Reserved."
             },
             es: {
-                heroTitle: "Servicio de Limpieza de Escombros Elite en Chicagoland",
+                heroTitle: "Servicio de Limpieza de Escombros de Élite en Chicagoland",
                 heroText: "SureOne Solutions es el proveedor líder en limpieza experta, eliminación de escombros y limpieza de precisión. Transformamos espacios con eficiencia y confiabilidad.",
                 heroBtn: "Solicite una Cotización Gratis",
                 servicesTitle: "Nuestra Experiencia",
                 servicesSubtitle: "Soluciones a medida para propiedades residenciales y comerciales.",
-                s1Title: "Limpiezas Completas", s1Desc: "Limpieza total de sótanos, garajes, oficinas y liquidación de propiedades.",
+                s1Title: "Limpiezas Completas", s1Desc: "Limpieza total de sótanos, garajes y oficinas.",
                 s2Title: "Eliminación de Basura", s2Desc: "Retiro eficiente y responsable de electrodomésticos, muebles y escombros.",
                 s3Title: "Limpieza Profunda", s3Desc: "Limpieza para mudanzas y restauración de propiedades.",
                 s4Title: "Demolición Ligera", s4Desc: "Desmantelamiento seguro y controlado de estructuras pequeñas.",
-                s5Title: "Transporte Ligero", s5Desc: "Transporte confiable punto a punto para materiales y cargas pequeñas.",
-                s6Title: "Limpieza de Nieve", s6Desc: "Mantenimiento invernal rápido para entradas, aceras y estacionamientos.",
+                s5Title: "Transporte Ligero", s5Desc: "Transporte confiable de punto a punto para materiales y cargas pequeñas.",
+                s6Title: "Remoción de Nieve", s6Desc: "Mantenimiento invernal rápido para entradas, caminos y estacionamientos.",
                 quoteTitle: "Inicie su Proyecto",
-                lFname: "Nombre", lLname: "Apellido", lEmail: "Correo Electrónico", lPhone: "Teléfono",
+                lFname: "Nombre", lLname: "Apellido", lEmail: "Correo Electrónico", lPhone: "Número de Teléfono",
                 lSelServices: "Servicios Seleccionados", lDetails: "Detalles del Proyecto", lPhotos: "Incluir Fotos (Opcional)",
+                pDetailsPlaceholder: "Por favor describa su proyecto...",
                 btnChoose: "Elegir Fotos",
-                noFiles: "No hay archivos seleccionados",
+                noFiles: "No se han seleccionado archivos",
                 filesCount: "archivos seleccionados",
                 pPhotoLimit: "Máximo 5 fotos. Cada archivo no puede exceder los 10MB.",
                 fSubmit: "Enviar Solicitud",
-                fTagline: "Licenciados • Asegurados • Profesionales",
-                fDesc: "La opción de limpieza de escombros de élite en Chicagoland",
+                fTagline: "Con Licencia • Asegurado • Profesional",
+                fDesc: "La Opción de Élite para la Eliminación de Basura en Chicagoland",
                 fContactTitle: "Contáctenos", fArea: "Área de Servicio",
                 area1: "Chicago", area2: "Suburbios del Noroeste", area3: "Suburbios del Sur", area4: "Suburbios del Oeste",
                 fCopy: "© 2026 SureOne Solutions, LLC. Todos los derechos reservados."
@@ -647,6 +649,7 @@
             document.getElementById('l-phone').innerText = data.lPhone;
             document.getElementById('l-sel-services').innerText = data.lSelServices;
             document.getElementById('l-details').innerText = data.lDetails;
+            document.getElementById('p-details').placeholder = data.pDetailsPlaceholder;
             document.getElementById('l-photos').innerText = data.lPhotos;
             document.getElementById('btn-choose').innerText = data.btnChoose;
             document.getElementById('p-photo-limit').innerText = data.pPhotoLimit;
