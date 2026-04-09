@@ -45,12 +45,13 @@
         .btn-primary {
             display: inline-block;
             background-color: var(--primary-blue); color: #fff;
-            padding: 14px 28px; border-radius: var(--radius-md);
+            padding: 10px 20px; border-radius: var(--radius-md);
             text-decoration: none; font-weight: 600; border: none;
             cursor: pointer; transition: var(--transition);
             text-align: center;
+            font-size: 0.95rem;
         }
-        .btn-primary:hover { background-color: var(--primary-hover); transform: translateY(-2px); }
+        .btn-primary:hover { background-color: var(--primary-hover); transform: translateY(-2px); color: #fff; }
 
         .file-upload-wrapper {
             display: flex;
@@ -131,8 +132,8 @@
 
         #lang-toggle {
             background: transparent; color: var(--text-dark); border: 1px solid var(--primary-blue);
-            padding: 6px 16px; border-radius: var(--radius-md); font-weight: 600;
-            font-size: 0.85rem; cursor: pointer; transition: var(--transition);
+            padding: 6px 14px; border-radius: var(--radius-md); font-weight: 600;
+            font-size: 0.8rem; cursor: pointer; transition: var(--transition);
         }
         #lang-toggle:hover { background: var(--primary-blue); color: #fff; }
 
@@ -278,6 +279,7 @@
             width: 100%;
             font-size: 1.1rem;
             display: block;
+            padding: 14px 28px;
         }
 
         .file-limit-note { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
@@ -317,7 +319,6 @@
             justify-content: center;
         }
 
-        /* Review and Promise Section Styles */
         .reviews-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -334,29 +335,6 @@
         }
         .review-card h3 { font-size: 1.25rem; margin-bottom: 12px; }
         .review-text { color: var(--text-muted); font-size: 0.95rem; }
-        
-        .review-cta-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
-        }
-        .btn-review {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 24px;
-            border-radius: var(--radius-md);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: var(--transition);
-            border: none;
-            color: #fff;
-            background-color: var(--primary-blue);
-        }
-        .btn-review:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); opacity: 0.9; }
 
         .footer { 
             background-color: var(--bg-surface); 
@@ -417,15 +395,6 @@
             transform: translateY(1px);
             margin-bottom: 0;
         }
-        
-        .social-links { display: flex; gap: 16px; margin-top: 10px; justify-content: center; }
-        .social-links a {
-            width: 40px; height: 40px; background: var(--bg-body); display: flex;
-            align-items: center; justify-content: center; border-radius: 50%;
-            color: var(--text-dark); transition: var(--transition); border: 1px solid var(--border-color);
-            margin-bottom: 0;
-        }
-        .social-links a:hover { background: var(--primary-blue); color: #fff; border-color: var(--primary-blue); }
 
         .footer-bottom { 
             text-align: center; 
@@ -433,6 +402,39 @@
             border-top: 1px solid var(--border-color); 
             color: var(--text-muted); 
             font-size: 0.9rem; 
+        }
+
+        .review-cta-container {
+            display: flex;
+            flex-direction: row; 
+            justify-content: center;
+            gap: 12px;
+            margin-top: 10px;
+            width: 100%;
+        }
+        .btn-review {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;  
+            height: 45px;
+            border-radius: 50%; 
+            text-decoration: none;
+            transition: var(--transition);
+            background-color: var(--primary-blue);
+            color: #ffffff;
+            border: 1px solid var(--primary-blue);
+        }
+        .btn-review i {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin: 0; 
+        }
+        .btn-review:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+            color: #ffffff;
+            transform: translateY(-3px);
         }
 
         .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
@@ -546,22 +548,6 @@
                     <p id="promise-3-desc" class="review-text">We provide upfront, honest estimates for every single project.</p>
                 </div>
             </div>
-
-            <div class="text-center">
-                <h3 id="leave-review-text" style="margin-bottom: 10px;">Help Us Grow</h3>
-                <p id="leave-review-sub" style="color: var(--text-muted); margin-bottom: 25px;">As a local business, your feedback means everything to us. If we've served you, please share your experience:</p>
-                <div class="review-cta-container">
-                    <a href="https://g.page/r/CU-Q8A315w1WEBM/review" target="_blank" class="btn-review">
-                        <i class="fab fa-google"></i> Google
-                    </a>
-                    <a href="https://www.facebook.com/share/186J6U5bET/?mibextid=wwXIfr/reviews" target="_blank" class="btn-review">
-                        <i class="fab fa-facebook-f"></i> Facebook
-                    </a>
-                    <a href="https://www.instagram.com/sureone_solutions?igsh=azRwbzExZ2I3aDRk&utm_source=qr" target="_blank" class="btn-review">
-                        <i class="fab fa-instagram"></i> Instagram
-                    </a>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -625,27 +611,39 @@
         <div class="container">
             <div class="footer-grid reveal">
                 <div class="footer-col">
-                    <div class="footer-logo-wrapper" style="margin-bottom: 20px;">
-                        <img src="image_0.png" alt="SureOne Solutions LLC Logo" class="logo-img" style="max-height: 80px;"> 
-                    </div>
-                    <p id="f-tagline" style="font-weight: 700;">Licensed • Insured • Professional</p>
-                    <p id="f-desc">Chicagoland's Elite Junk Removal Choice</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/share/186J6U5bET/?mibextid=wwXIfr" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/sureone_solutions?igsh=azRwbzExZ2I3aDRk&utm_source=qr" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4 id="f-contact-title">Contact Us</h4>
-                    <div class="footer-contact"><i class="fa-solid fa-phone"></i> <span>(708) 270-8380</span></div>
-                    <div class="footer-contact"><i class="fa-solid fa-envelope"></i> <span>Snc@sureonesolutions.com</span></div>
-                </div>
-                <div class="footer-col">
                     <h4 id="f-area">Service Area</h4>
                     <p id="area1">Chicago</p>
                     <p id="area2">Northwest Suburbs</p>
                     <p id="area3">South Suburbs</p>
                     <p id="area4">Western Suburbs</p>
+                </div>
+                
+                <div class="footer-col">
+                    <div class="footer-logo-wrapper" style="margin-bottom: 20px;">
+                        <img src="image_0.png" alt="SureOne Solutions LLC Logo" class="logo-img" 
+                             style="max-height: 55px; opacity: 1; transition: var(--transition);"> 
+                    </div>
+                    <p id="f-tagline" style="font-weight: 700; margin-bottom: 10px;">Licensed • Insured • Professional</p>
+                    
+                    <h4 id="f-contact-title" style="margin-bottom: 15px;">Contact Us</h4>
+                    <div class="footer-contact"><i class="fa-solid fa-phone"></i> <span>(708) 270-8380</span></div>
+                    <div class="footer-contact"><i class="fa-solid fa-envelope"></i> <span>Snc@sureonesolutions.com</span></div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 id="leave-review-text" style="margin-bottom: 15px;">Help Us Grow</h4>
+                    <p id="leave-review-sub" style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem; line-height: 1.4; text-align: center; max-width: 250px;">As a local business, your feedback means everything to us. If we've served you, please share your experience:</p>
+                    <div class="review-cta-container">
+                        <a href="https://g.page/r/CU-Q8A315w1WEBM/review" target="_blank" class="btn-review" aria-label="Google Review">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/186J6U5bET/?mibextid=wwXIfr/reviews" target="_blank" class="btn-review" aria-label="Facebook Page">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sureone_solutions?igsh=azRwbzExZ2I3aDRk&utm_source=qr" target="_blank" class="btn-review" aria-label="Instagram Profile">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom reveal">
@@ -678,7 +676,6 @@
                 pPhotoLimit: "Maximum 5 photos. Each file cannot exceed 10MB.",
                 fSubmit: "Submit Request",
                 fTagline: "Licensed • Insured • Professional",
-                fDesc: "Chicagoland's Elite Junk Removal Choice",
                 fContactTitle: "Contact Us", fArea: "Service Area",
                 area1: "Chicago", area2: "Northwest Suburbs", area3: "South Suburbs", area4: "Western Suburbs",
                 fCopy: "© 2026 SureOne Solutions, LLC. All Rights Reserved.",
@@ -715,7 +712,6 @@
                 pPhotoLimit: "Máximo 5 fotos. Cada archivo no puede exceder los 10MB.",
                 fSubmit: "Enviar Solicitud",
                 fTagline: "Con Licencia • Asegurado • Profesional",
-                fDesc: "La Opción de Élite para la Eliminación de Basura en Chicagoland",
                 fContactTitle: "Contáctenos", fArea: "Área de Servicio",
                 area1: "Chicago", area2: "Suburbios del Noroeste", area3: "Suburbios del Sur", area4: "Suburbios del Oeste",
                 fCopy: "© 2026 SureOne Solutions, LLC. Todos los derechos reservados.",
@@ -734,7 +730,6 @@
 
         function setLanguage(lang) {
             const data = translations[lang];
-            
             document.getElementById('hero-title').innerText = data.heroTitle;
             document.getElementById('hero-text').innerText = data.heroText;
             document.getElementById('hero-btn').innerText = data.heroBtn;
@@ -753,7 +748,6 @@
             document.getElementById('p-photo-limit').innerText = data.pPhotoLimit;
             document.getElementById('f-submit').innerText = data.fSubmit;
             document.getElementById('f-tagline').innerText = data.fTagline;
-            document.getElementById('f-desc').innerText = data.fDesc;
             document.getElementById('f-contact-title').innerText = data.fContactTitle;
             document.getElementById('f-area').innerText = data.fArea;
             document.getElementById('area1').innerText = data.area1;
@@ -761,7 +755,6 @@
             document.getElementById('area3').innerText = data.area3;
             document.getElementById('area4').innerText = data.area4;
             document.getElementById('f-copy').innerText = data.fCopy;
-            
             document.getElementById('review-section-title').innerText = data.reviewSectionTitle;
             document.getElementById('review-section-subtitle').innerText = data.reviewSectionSubtitle;
             document.getElementById('promise-1-title').innerText = data.promise1Title;
@@ -772,14 +765,10 @@
             document.getElementById('promise-3-desc').innerText = data.promise3Desc;
             document.getElementById('leave-review-text').innerText = data.leaveReviewText;
             document.getElementById('leave-review-sub').innerText = data.leaveReviewSub;
-
             updateFileStatus();
-
             document.querySelectorAll('[data-translate]').forEach(el => {
                 const key = el.getAttribute('data-translate').replace(/-([a-z])/g, (g) => g[1].toUpperCase());
-                if (data[key]) {
-                    el.innerText = data[key];
-                }
+                if (data[key]) el.innerText = data[key];
             });
             updateDetails();
         }
@@ -805,11 +794,9 @@
         });
 
         let selectedServices = [];
-
         function toggleService(element) {
             const serviceName = element.getAttribute('data-name');
             const checkbox = document.querySelector(`input[data-service="${serviceName}"]`);
-            
             if (element.classList.contains('selected')) {
                 element.classList.remove('selected');
                 checkbox.checked = false;
@@ -826,7 +813,6 @@
         function syncService(checkbox) {
             const serviceName = checkbox.getAttribute('data-service');
             const card = document.querySelector(`.service-card[data-name="${serviceName}"]`);
-            
             if (checkbox.checked) {
                 card.classList.add('selected');
                 if(!selectedServices.includes(serviceName)) selectedServices.push(serviceName);
@@ -840,15 +826,10 @@
         function updateDetails() {
             const detailsArea = document.getElementById('p-details');
             const isSpanish = langBtn.innerText === "English"; 
-            
             const prefix = isSpanish ? "Me interesan los siguientes servicios: " : "I am interested in the following services: ";
             const suffix = isSpanish ? ".\n\nDetalles adicionales: " : ".\n\nAdditional details: ";
-            
-            if (selectedServices.length > 0) {
-                detailsArea.value = prefix + selectedServices.join(', ') + suffix;
-            } else {
-                detailsArea.value = "";
-            }
+            if (selectedServices.length > 0) detailsArea.value = prefix + selectedServices.join(', ') + suffix;
+            else detailsArea.value = "";
         }
 
         const photoInput = document.getElementById('p-photos');
@@ -859,11 +840,8 @@
         function updateFileStatus() {
             const isSpanish = langBtn.innerText === "English";
             const data = isSpanish ? translations.es : translations.en;
-            if (uploadedFiles.length === 0) {
-                fileStatus.innerText = data.noFiles;
-            } else {
-                fileStatus.innerText = `${uploadedFiles.length} ${data.filesCount}`;
-            }
+            if (uploadedFiles.length === 0) fileStatus.innerText = data.noFiles;
+            else fileStatus.innerText = `${uploadedFiles.length} ${data.filesCount}`;
         }
 
         photoInput.addEventListener('change', (e) => {
