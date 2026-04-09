@@ -277,9 +277,12 @@
 
         .btn-primary.submit-btn {
             width: 100%;
+            max-width: 320px;
+            margin: 10px auto 0;
             font-size: 1.1rem;
             display: block;
             padding: 14px 28px;
+            box-shadow: var(--shadow-sm);
         }
 
         .file-limit-note { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
@@ -454,6 +457,7 @@
             .form-grid { grid-template-columns: 1fr; }
             .quote-wrapper { padding: 30px 20px; }
             .service-selection-box { grid-template-columns: 1fr; }
+            .btn-primary.submit-btn { max-width: 100%; }
         }
     </style>
 </head>
@@ -574,7 +578,7 @@
                     </div>
                     
                     <div class="form-group full-width">
-                        <label id="l-sel-services">Selected Services</label>
+                        <label id="l-sel-services">Select Services</label>
                         <div class="service-selection-box" id="form-service-selection">
                             <label class="service-option"><input type="checkbox" data-service="Full Clean-outs" onchange="syncService(this)"> <span data-translate="s1-title">Full Clean-outs</span></label>
                             <label class="service-option"><input type="checkbox" data-service="Junk Removal" onchange="syncService(this)"> <span data-translate="s2-title">Junk Removal</span></label>
@@ -668,7 +672,7 @@
                 s6Title: "Snow Removal", s6Desc: "Prompt winter maintenance for driveways and walkways.",
                 quoteTitle: "Start Your Project",
                 lFname: "First Name", lLname: "Last Name", lEmail: "Email Address", lPhone: "Phone Number",
-                lSelServices: "Selected Services", lDetails: "Project Details", lPhotos: "Include Photos (Optional)",
+                lSelServices: "Select Services", lDetails: "Project Details", lPhotos: "Include Photos (Optional)",
                 pDetailsPlaceholder: "Please describe your project...",
                 btnChoose: "Choose Photos",
                 noFiles: "No files selected",
@@ -704,7 +708,7 @@
                 s6Title: "Remoción de Nieve", s6Desc: "Mantenimiento invernal rápido para entradas y caminos.",
                 quoteTitle: "Inicie su Proyecto",
                 lFname: "Nombre", lLname: "Apellido", lEmail: "Correo Electrónico", lPhone: "Número de Teléfono",
-                lSelServices: "Servicios Seleccionados", lDetails: "Detalles del Proyecto", lPhotos: "Incluir Fotos (Opcional)",
+                lSelServices: "Seleccionar Servicios", lDetails: "Detalles del Proyecto", lPhotos: "Incluir Fotos (Opcional)",
                 pDetailsPlaceholder: "Por favor describa su proyecto...",
                 btnChoose: "Elegir Fotos",
                 noFiles: "No se han seleccionado archivos",
