@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <style>
         :root {
@@ -148,11 +148,6 @@
 
         .hero-content {
             max-width: 800px; margin: 0 auto; text-align: center;
-        }
-        .badge {
-            display: inline-block; background-color: #dbeafe; color: var(--primary-blue);
-            padding: 6px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600;
-            margin-bottom: 24px; text-transform: uppercase; letter-spacing: 1px;
         }
         .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 24px; color: var(--text-dark); }
         .hero p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 40px; max-width: 600px; margin-inline: auto; }
@@ -322,6 +317,47 @@
             justify-content: center;
         }
 
+        /* Review and Promise Section Styles */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        .review-card {
+            background: var(--bg-surface);
+            padding: 40px 30px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
+        .review-card h3 { font-size: 1.25rem; margin-bottom: 12px; }
+        .review-text { color: var(--text-muted); font-size: 0.95rem; }
+        
+        .review-cta-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .btn-review {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            border: none;
+            color: #fff;
+            background-color: var(--primary-blue);
+        }
+        .btn-review:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); opacity: 0.9; }
+
         .footer { 
             background-color: var(--bg-surface); 
             border-top: 1px solid var(--border-color); 
@@ -455,7 +491,7 @@
                 <div class="service-card reveal" data-name="Full Clean-outs" onclick="toggleService(this)">
                     <div class="service-icon"><i class="fa-solid fa-house-chimney"></i></div>
                     <h3 data-translate="s1-title">Full Clean-outs</h3>
-                    <p data-translate="s1-desc">Complete clearing of basements, garages, and offices.</p>
+                    <p data-translate="s1-desc">Complete basement, garage, office, and estate clearing.</p>
                 </div>
                 <div class="service-card reveal" data-name="Junk Removal" onclick="toggleService(this)">
                     <div class="service-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
@@ -480,7 +516,7 @@
                 <div class="service-card reveal" data-name="Snow Removal" onclick="toggleService(this)">
                     <div class="service-icon"><i class="fa-solid fa-snowflake"></i></div>
                     <h3 data-translate="s6-title">Snow Removal</h3>
-                    <p data-translate="s6-desc">Prompt winter maintenance for driveways, walkways, and parking lots.</p>
+                    <p data-translate="s6-desc">Prompt winter maintenance for driveways and walkways.</p>
                 </div>
             </div>
         </div>
@@ -542,6 +578,49 @@
         </div>
     </section>
 
+    <section class="section-padding" style="background-color: var(--bg-body);">
+        <div class="container reveal">
+            <div class="services-header text-center">
+                <h2 id="review-section-title">The SureOne Promise</h2>
+                <p id="review-section-subtitle">Why homeowners and businesses across Chicagoland trust us.</p>
+            </div>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3 id="promise-1-title">Fully Insured</h3>
+                    <p id="promise-1-desc" class="review-text">We carry full liability insurance so you can have total peace of mind while we are on your property.</p>
+                </div>
+                <div class="review-card">
+                    <div class="service-icon"><i class="fa-solid fa-clock"></i></div>
+                    <h3 id="promise-2-title">Reliable Timing</h3>
+                    <p id="promise-2-desc" class="review-text">Your time is valuable. We provide clear arrival windows and stay in constant communication.</p>
+                </div>
+                <div class="review-card">
+                    <div class="service-icon"><i class="fa-solid fa-tags"></i></div>
+                    <h3 id="promise-3-title">Transparent Pricing</h3>
+                    <p id="promise-3-desc" class="review-text">No hidden fees or surprise surcharges. We provide upfront, honest estimates for every single project.</p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <h3 id="leave-review-text" style="margin-bottom: 10px;">Help Us Grow</h3>
+                <p id="leave-review-sub" style="color: var(--text-muted); margin-bottom: 25px;">As a local business, your feedback means everything to us. If we've served you, please share your experience:</p>
+                <div class="review-cta-container">
+                    <a href="https://g.page/r/CU-Q8A315w1WEBM/review" target="_blank" class="btn-review">
+                        <i class="fab fa-google"></i> Google
+                    </a>
+                    <a href="https://www.facebook.com/share/186J6U5bET/?mibextid=wwXIfr/reviews" target="_blank" class="btn-review">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </a>
+                    <a href="https://www.instagram.com/sureone_solutions?igsh=azRwbzExZ2I3aDRk&utm_source=qr" target="_blank" class="btn-review">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-grid reveal">
@@ -583,12 +662,12 @@
                 heroBtn: "Request a Free Quote",
                 servicesTitle: "Our Expertise",
                 servicesSubtitle: "Tailored solutions for residential and commercial properties.",
-                s1Title: "Full Clean-outs", s1Desc: "Complete clearing of basements, garages, and offices.",
+                s1Title: "Full Clean-outs", s1Desc: "Complete basement, garage, office, and estate clearing.",
                 s2Title: "Junk Removal", s2Desc: "Efficient, responsible removal of appliances, furniture, and debris.",
                 s3Title: "Deep Cleaning", s3Desc: "Move-in/out and property restoration cleaning.",
                 s4Title: "Light Demolition", s4Desc: "Safe, controlled teardowns of small structures.",
                 s5Title: "Light Hauling", s5Desc: "Reliable point-to-point transport for materials and small loads.",
-                s6Title: "Snow Removal", s6Desc: "Prompt winter maintenance for driveways, walkways, and parking lots.",
+                s6Title: "Snow Removal", s6Desc: "Prompt winter maintenance for driveways and walkways.",
                 quoteTitle: "Start Your Project",
                 lFname: "First Name", lLname: "Last Name", lEmail: "Email Address", lPhone: "Phone Number",
                 lSelServices: "Selected Services", lDetails: "Project Details", lPhotos: "Include Photos (Optional)",
@@ -602,7 +681,17 @@
                 fDesc: "Chicagoland's Elite Junk Removal Choice",
                 fContactTitle: "Contact Us", fArea: "Service Area",
                 area1: "Chicago", area2: "Northwest Suburbs", area3: "South Suburbs", area4: "Western Suburbs",
-                fCopy: "© 2026 SureOne Solutions, LLC. All Rights Reserved."
+                fCopy: "© 2026 SureOne Solutions, LLC. All Rights Reserved.",
+                reviewSectionTitle: "The SureOne Promise",
+                reviewSectionSubtitle: "Why homeowners and businesses across Chicagoland trust us.",
+                promise1Title: "Fully Insured",
+                promise1Desc: "We carry full liability insurance so you can have total peace of mind while we are on your property.",
+                promise2Title: "Reliable Timing",
+                promise2Desc: "Your time is valuable. We provide clear arrival windows and stay in constant communication.",
+                promise3Title: "Transparent Pricing",
+                promise3Desc: "No hidden fees or surprise surcharges. We provide upfront, honest estimates for every single project.",
+                leaveReviewText: "Help Us Grow",
+                leaveReviewSub: "As a local business, your feedback means everything to us. If we've served you, please share your experience:"
             },
             es: {
                 heroTitle: "Servicio de Limpieza de Escombros de Élite en Chicagoland",
@@ -610,12 +699,12 @@
                 heroBtn: "Solicite una Cotización Gratis",
                 servicesTitle: "Nuestra Experiencia",
                 servicesSubtitle: "Soluciones a medida para propiedades residenciales y comerciales.",
-                s1Title: "Limpiezas Completas", s1Desc: "Limpieza total de sótanos, garajes y oficinas.",
+                s1Title: "Limpiezas Completas", s1Desc: "Limpieza completa de sótanos, garajes, oficinas y patrimonios.",
                 s2Title: "Eliminación de Basura", s2Desc: "Retiro eficiente y responsable de electrodomésticos, muebles y escombros.",
                 s3Title: "Limpieza Profunda", s3Desc: "Limpieza para mudanzas y restauración de propiedades.",
                 s4Title: "Demolición Ligera", s4Desc: "Desmantelamiento seguro y controlado de estructuras pequeñas.",
                 s5Title: "Transporte Ligero", s5Desc: "Transporte confiable de punto a punto para materiales y cargas pequeñas.",
-                s6Title: "Remoción de Nieve", s6Desc: "Mantenimiento invernal rápido para entradas, caminos y estacionamientos.",
+                s6Title: "Remoción de Nieve", s6Desc: "Mantenimiento invernal rápido para entradas y caminos.",
                 quoteTitle: "Inicie su Proyecto",
                 lFname: "Nombre", lLname: "Apellido", lEmail: "Correo Electrónico", lPhone: "Número de Teléfono",
                 lSelServices: "Servicios Seleccionados", lDetails: "Detalles del Proyecto", lPhotos: "Incluir Fotos (Opcional)",
@@ -629,14 +718,23 @@
                 fDesc: "La Opción de Élite para la Eliminación de Basura en Chicagoland",
                 fContactTitle: "Contáctenos", fArea: "Área de Servicio",
                 area1: "Chicago", area2: "Suburbios del Noroeste", area3: "Suburbios del Sur", area4: "Suburbios del Oeste",
-                fCopy: "© 2026 SureOne Solutions, LLC. Todos los derechos reservados."
+                fCopy: "© 2026 SureOne Solutions, LLC. Todos los derechos reservados.",
+                reviewSectionTitle: "La Promesa SureOne",
+                reviewSectionSubtitle: "Por qué los propietarios y empresas de todo Chicagoland confían en nosotros.",
+                promise1Title: "Totalmente Asegurado",
+                promise1Desc: "Contamos con un seguro de responsabilidad civil completo para que tenga total tranquilidad mientras estamos en su propiedad.",
+                promise2Title: "Sincronización Confiable",
+                promise2Desc: "Su tiempo es valioso. Ofrecemos ventanas de llegada claras y mantenemos una comunicación constante.",
+                promise3Title: "Precios Transparentes",
+                promise3Desc: "Sin tarifas ocultas ni recargos sorpresa. Proporcionamos estimaciones honestas y por adelantado para cada proyecto.",
+                leaveReviewText: "Ayúdanos a Crecer",
+                leaveReviewSub: "Como empresa local, sus comentarios significan todo para nosotros. Si le hemos servido, comparta su experiencia:"
             }
         };
 
         function setLanguage(lang) {
             const data = translations[lang];
             
-            // Basic text replacements
             document.getElementById('hero-title').innerText = data.heroTitle;
             document.getElementById('hero-text').innerText = data.heroText;
             document.getElementById('hero-btn').innerText = data.heroBtn;
@@ -663,10 +761,20 @@
             document.getElementById('area3').innerText = data.area3;
             document.getElementById('area4').innerText = data.area4;
             document.getElementById('f-copy').innerText = data.fCopy;
+            
+            document.getElementById('review-section-title').innerText = data.reviewSectionTitle;
+            document.getElementById('review-section-subtitle').innerText = data.reviewSectionSubtitle;
+            document.getElementById('promise-1-title').innerText = data.promise1Title;
+            document.getElementById('promise-1-desc').innerText = data.promise1Desc;
+            document.getElementById('promise-2-title').innerText = data.promise2Title;
+            document.getElementById('promise-2-desc').innerText = data.promise2Desc;
+            document.getElementById('promise-3-title').innerText = data.promise3Title;
+            document.getElementById('promise-3-desc').innerText = data.promise3Desc;
+            document.getElementById('leave-review-text').innerText = data.leaveReviewText;
+            document.getElementById('leave-review-sub').innerText = data.leaveReviewSub;
 
             updateFileStatus();
 
-            // Data attribute translation
             document.querySelectorAll('[data-translate]').forEach(el => {
                 const key = el.getAttribute('data-translate').replace(/-([a-z])/g, (g) => g[1].toUpperCase());
                 if (data[key]) {
