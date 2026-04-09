@@ -389,6 +389,7 @@
             display: flex; 
             flex-direction: column; 
             align-items: center; 
+            justify-content: center;
         }
         .footer-col h4 { 
             font-size: 1.1rem; 
@@ -637,10 +638,8 @@
                 <div class="footer-col">
                     <div class="footer-logo-wrapper" style="margin-bottom: 20px;">
                         <img src="image_0.png" alt="SureOne Solutions LLC Logo" class="logo-img" 
-                             style="max-height: 55px; opacity: 1; transition: var(--transition);"> 
+                             style="max-height: 75px; opacity: 1; transition: var(--transition);"> 
                     </div>
-                    <p id="f-tagline" style="font-weight: 700; margin-bottom: 10px; color: var(--text-dark);">Licensed • Insured • Professional</p>
-                    
                     <h4 id="f-contact-title" style="margin-bottom: 15px; color: var(--text-muted);">Contact Us</h4>
                     <span id="f-phone-display">(708) 270-8380</span>
                     <span id="f-email-display">Snc@sureonesolutions.com</span>
@@ -691,7 +690,6 @@
                 filesCount: "files selected",
                 pPhotoLimit: "Maximum 5 photos. Each file cannot exceed 10MB.",
                 fSubmit: "Submit Request",
-                fTagline: "Licensed • Insured • Professional",
                 fContactTitle: "Contact Us", fArea: "Service Area",
                 area1: "Chicago", area2: "Northwest Suburbs", area3: "South Suburbs", area4: "Western Suburbs",
                 fCopy: "© 2026 SureOne Solutions, LLC. All Rights Reserved.",
@@ -727,7 +725,6 @@
                 filesCount: "archivos seleccionados",
                 pPhotoLimit: "Máximo 5 fotos. Cada archivo no puede exceder los 10MB.",
                 fSubmit: "Enviar Solicitud",
-                fTagline: "Con Licencia • Asegurado • Profesional",
                 fContactTitle: "Contáctenos", fArea: "Área de Servicio",
                 area1: "Chicago", area2: "Suburbios del Noroeste", area3: "Suburbios del Sur", area4: "Suburbios del Oeste",
                 fCopy: "© 2026 SureOne Solutions, LLC. Todos los derechos reservados.",
@@ -763,7 +760,6 @@
             document.getElementById('btn-choose').innerText = data.btnChoose;
             document.getElementById('p-photo-limit').innerText = data.pPhotoLimit;
             document.getElementById('f-submit').innerText = data.fSubmit;
-            document.getElementById('f-tagline').innerText = data.fTagline;
             document.getElementById('f-contact-title').innerText = data.fContactTitle;
             document.getElementById('f-area').innerText = data.fArea;
             document.getElementById('area1').innerText = data.area1;
