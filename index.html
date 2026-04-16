@@ -73,7 +73,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        h1, h2, h3, h4 { font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; }
+        h1, h2, h3 { font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; }
         .text-center { text-align: center; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         .section-padding { padding: 100px 0; }
@@ -89,6 +89,29 @@
             box-shadow: var(--shadow-md);
         }
         .btn-primary:hover { background-color: var(--primary-hover); transform: translateY(-2px); color: #fff; }
+
+        .file-upload-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 5px;
+        }
+        .custom-file-label {
+            background-color: #f1f5f9;
+            color: var(--text-dark);
+            padding: 10px 20px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .custom-file-label:hover {
+            background-color: #e2e8f0;
+        }
+        #p-photos { display: none; }
+        #file-status { font-size: 0.85rem; color: var(--text-muted); }
 
         .navbar {
             background-color: rgba(255, 255, 255, 0.7);
@@ -171,37 +194,6 @@
         }
         .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 600; margin-bottom: 24px; color: var(--text-dark); }
         .hero p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 40px; max-width: 600px; margin-inline: auto; }
-
-        .about-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-            background-color: var(--bg-body); 
-            padding: 60px 40px;
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-md);
-        }
-        .about-content h2 { font-size: 2.5rem; margin-bottom: 24px; }
-        .about-content p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 30px; }
-
-        .about-pillars {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .pillar {
-            text-align: center;
-        }
-        .pillar i {
-            font-size: 1.5rem;
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-            display: block;
-        }
-        .pillar h4 { font-size: 1.2rem; margin-bottom: 10px; color: var(--text-dark); }
-        .pillar p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0; }
 
         .services-header { margin-bottom: 60px; }
         .services-header h2 { font-size: 2.5rem; margin-bottom: 16px; }
@@ -305,6 +297,28 @@
         }
         .form-group textarea { min-height: 150px; resize: vertical; }
 
+        .service-selection-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            background: var(--bg-body);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+        }
+        .service-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+        .service-option:hover { background: #fff; }
+        .service-option input { cursor: pointer; width: 18px; height: 18px; accent-color: var(--primary-blue); }
+
         .btn-primary.submit-btn {
             width: 100%;
             max-width: 320px;
@@ -315,21 +329,172 @@
             box-shadow: var(--shadow-sm);
         }
 
+        .file-limit-note { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
+        .photo-preview-container { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 12px; 
+            margin-top: 15px; 
+        }
+        .preview-item {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        .preview-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .remove-photo {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            background: rgba(239, 68, 68, 0.9);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        .review-card {
+            background: var(--bg-body);
+            padding: 40px 30px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+        }
+        .review-card h3 { font-size: 1.25rem; margin-bottom: 12px; }
+        .review-text { color: var(--text-muted); font-size: 0.95rem; }
+
         .footer { 
             background-color: var(--bg-surface); 
             border-top: 1px solid var(--border-color); 
             padding: 80px 0 40px; 
             text-align: center; 
         }
+        .footer-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 40px; 
+            margin-bottom: 60px; 
+        }
+        
+        .footer-logo-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        .footer-col { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+        }
+        .footer-col h4 { 
+            font-size: 1.1rem; 
+            margin-bottom: 24px; 
+            color: var(--text-dark); 
+            text-align: center;
+            width: 100%;
+        }
+        
+        .footer-col p, .footer-col span, .footer-col a { 
+            color: var(--text-muted); 
+            text-decoration: none; 
+            margin-bottom: 16px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 10px;
+            font-size: 0.95rem; 
+            font-weight: 500;
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .footer-col a:hover { color: var(--primary-blue); }
+
+        .footer-bottom { 
+            text-align: center; 
+            padding-top: 30px; 
+            border-top: 1px solid var(--border-color); 
+            color: var(--text-muted); 
+            font-size: 0.9rem; 
+        }
+
+        .review-cta-container {
+            display: flex;
+            flex-direction: row; 
+            justify-content: center;
+            gap: 12px;
+            margin-top: 10px;
+            width: 100%;
+        }
+        .btn-review {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;  
+            height: 45px;
+            border-radius: 50%; 
+            text-decoration: none;
+            transition: var(--transition);
+            background-color: var(--primary-blue);
+            color: #ffffff;
+            border: 1px solid var(--primary-blue);
+        }
+        .btn-review i {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin: 0; 
+        }
+        .btn-review:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
 
         .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
+        @media (max-width: 992px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 50px; }
+        }
+
         @media (max-width: 768px) {
+            .nav-actions { gap: 15px; }
             .nav-actions .phone-link span { display: none; }
+            .phone-link { padding: 8px; }
             .hero { padding: 140px 0 60px; }
-            .about-content { padding: 40px 20px; }
+            .nav-container { height: 100px; }
+            .logo-img { max-height: 80px; }
             .form-grid { grid-template-columns: 1fr; }
+            .quote-wrapper { padding: 30px 20px; }
+            .service-selection-box { grid-template-columns: 1fr; }
+            .btn-primary.submit-btn { max-width: 100%; }
         }
     </style>
 </head>
@@ -337,7 +502,7 @@
 
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="logo-link">
+            <a href="#" class="logo-link" aria-label="SureOne Solutions Home">
                 <img src="image_0.svg" alt="SureOne Solutions LLC Logo" class="logo-img">
             </a>
             <div class="nav-actions">
@@ -360,25 +525,24 @@
 
     <section class="section-padding" style="background-color: var(--bg-surface);">
         <div class="container">
-            <div class="about-content reveal">
-                <h2 id="about-title">About Us</h2>
-                <p id="about-intro">SureOne Solutions is a locally owned property services company built on integrity and professional expertise. We help homeowners and businesses reclaim their space with meticulous care.</p>
-                
-                <div class="about-pillars">
+            <div class="about-content reveal" style="max-width: 1000px; margin: 0 auto; text-align: center; background-color: var(--bg-body); padding: 60px 40px; border-radius: var(--radius-lg); border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
+                <h2 id="about-title" style="font-size: 2.5rem; margin-bottom: 24px;">About Us</h2>
+                <p id="about-intro" style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 30px;">SureOne Solutions is a locally owned property services company built on integrity and professional expertise. We help homeowners and businesses reclaim their space with meticulous care.</p>
+                <div class="about-pillars" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px;">
                     <div class="pillar">
-                        <i class="fa-solid fa-star"></i>
-                        <h4 id="pillar1-title">Our Mission</h4>
-                        <p id="pillar1-text">To restore peace of mind for our clients through responsible disposal and exceptional, high-quality, reliable service.</p>
+                        <i class="fa-solid fa-star" style="font-size: 1.5rem; color: var(--primary-blue); margin-bottom: 15px; display: block;"></i>
+                        <h4 id="pillar1-title" style="font-size: 1.2rem; margin-bottom: 10px; font-weight: 600;">Our Mission</h4>
+                        <p id="pillar1-text" style="font-size: 0.95rem; color: var(--text-muted);">To restore peace of mind for our clients through responsible disposal and exceptional, high-quality, reliable service.</p>
                     </div>
                     <div class="pillar">
-                        <i class="fa-solid fa-users"></i>
-                        <h4 id="pillar2-title">Our Team</h4>
-                        <p id="pillar2-text">A dedicated group of hardworking, professional experts committed to completing every job with absolute, unmatched precision.</p>
+                        <i class="fa-solid fa-users" style="font-size: 1.5rem; color: var(--primary-blue); margin-bottom: 15px; display: block;"></i>
+                        <h4 id="pillar2-title" style="font-size: 1.2rem; margin-bottom: 10px; font-weight: 600;">Our Team</h4>
+                        <p id="pillar2-text" style="font-size: 0.95rem; color: var(--text-muted);">A dedicated group of hardworking, professional experts committed to completing every job with absolute, unmatched precision.</p>
                     </div>
                     <div class="pillar">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <h4 id="pillar3-title">Local Focus</h4>
-                        <p id="pillar3-text">Proudly serving the diverse debris and junk removal needs of homeowners and businesses throughout the Chicagoland area.</p>
+                        <i class="fa-solid fa-location-dot" style="font-size: 1.5rem; color: var(--primary-blue); margin-bottom: 15px; display: block;"></i>
+                        <h4 id="pillar3-title" style="font-size: 1.2rem; margin-bottom: 10px; font-weight: 600;">Local Focus</h4>
+                        <p id="pillar3-text" style="font-size: 0.95rem; color: var(--text-muted);">Proudly serving the diverse debris and junk removal needs of homeowners and businesses throughout the Chicagoland area.</p>
                     </div>
                 </div>
             </div>
@@ -427,6 +591,33 @@
         </div>
     </section>
 
+    <section class="section-padding" style="background-color: var(--bg-surface);">
+        <div class="container reveal">
+            <div class="services-header text-center">
+                <h2 id="review-section-title">The SureOne Promise</h2>
+                <p id="review-section-subtitle">Why homeowners and businesses across Chicagoland trust us.</p>
+            </div>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3 id="promise-1-title">Fully Insured</h3>
+                    <p id="promise-1-desc" class="review-text">We provide the highest level of protection and security for your property throughout every stage of our service.</p>
+                </div>
+                <div class="review-card">
+                    <div class="service-icon"><i class="fa-solid fa-clock"></i></div>
+                    <h3 id="promise-2-title">Reliable Timing</h3>
+                    <p id="promise-2-desc" class="review-text">Accurate arrival windows and dedicated communication to keep you informed at every step of the process.</p>
+                </div>
+                <div class="review-card">
+                    <div class="service-icon"><i class="fa-solid fa-tags"></i></div>
+                    <h3 id="promise-3-title">Transparent Pricing</h3>
+                    <p id="promise-3-desc" class="review-text">We provide honest, definitive estimates for every project to ensure a seamless experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="quote" class="section-padding quote-section">
         <div class="container reveal">
             <div class="quote-wrapper">
@@ -434,15 +625,46 @@
                 <div class="form-grid">
                     <div class="form-group">
                         <label id="l-fname">First Name</label>
-                        <input type="text" id="p-fname" placeholder="John">
+                        <input type="text" id="p-fname" placeholder="John" aria-required="true">
                     </div>
                     <div class="form-group">
                         <label id="l-lname">Last Name</label>
-                        <input type="text" id="p-lname" placeholder="Doe">
+                        <input type="text" id="p-lname" placeholder="Doe" aria-required="true">
                     </div>
+                    <div class="form-group">
+                        <label id="l-email">Email Address</label>
+                        <input type="email" id="p-email" placeholder="john@example.com" aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label id="l-phone">Phone Number</label>
+                        <input type="tel" id="p-phone" placeholder="(000) 000-0000" maxlength="14" aria-required="true">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label id="l-sel-services">Select Services</label>
+                        <div class="service-selection-box" id="form-service-selection">
+                            <label class="service-option"><input type="checkbox" data-service="Full Clean-outs" onchange="syncService(this)"> <span data-translate="s1-title">Full Clean-outs</span></label>
+                            <label class="service-option"><input type="checkbox" data-service="Junk Removal" onchange="syncService(this)"> <span data-translate="s2-title">Junk Removal</span></label>
+                            <label class="service-option"><input type="checkbox" data-service="Deep Cleaning" onchange="syncService(this)"> <span data-translate="s3-title">Deep Cleaning</span></label>
+                            <label class="service-option"><input type="checkbox" data-service="Light Demolition" onchange="syncService(this)"> <span data-translate="s4-title">Light Demolition</span></label>
+                            <label class="service-option"><input type="checkbox" data-service="Light Hauling" onchange="syncService(this)"> <span data-translate="s5-title">Light Hauling</span></label>
+                            <label class="service-option"><input type="checkbox" data-service="Snow Removal" onchange="syncService(this)"> <span data-translate="s6-title">Snow Removal</span></label>
+                        </div>
+                    </div>
+
                     <div class="form-group full-width">
                         <label id="l-details">Project Details</label>
                         <textarea id="p-details" placeholder="Please describe your project..."></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label id="l-photos">Include Photos (Optional)</label>
+                        <div class="file-upload-wrapper">
+                            <label for="p-photos" class="custom-file-label" id="btn-choose">Choose Photos</label>
+                            <span id="file-status">No files selected</span>
+                        </div>
+                        <input type="file" id="p-photos" accept="image/*" multiple>
+                        <p class="file-limit-note" id="p-photo-limit">Maximum 5 photos. Each file cannot exceed 10MB.</p>
+                        <div id="photo-preview" class="photo-preview-container"></div>
                     </div>
                     <div class="form-group full-width">
                         <button class="btn-primary submit-btn" id="f-submit">Submit Request</button>
@@ -454,6 +676,41 @@
 
     <footer class="footer">
         <div class="container">
+            <div class="footer-grid reveal">
+                <div class="footer-col">
+                    <h4 id="f-area">Service Area</h4>
+                    <p id="area1">Chicago</p>
+                    <p id="area2">Northwest Suburbs</p>
+                    <p id="area3">South Suburbs</p>
+                    <p id="area4">Western Suburbs</p>
+                </div>
+                
+                <div class="footer-col">
+                    <div class="footer-logo-wrapper">
+                        <img src="image_0.svg" alt="SureOne Solutions LLC Logo" class="logo-img" 
+                             style="max-height: 75px; transition: var(--transition);"> 
+                    </div>
+                    <h4 id="f-contact-title" style="margin-bottom: 15px; color: var(--text-dark);">Contact Us</h4>
+                    <a href="tel:7082708380" id="f-phone-display">(708) 270-8380</a>
+                    <a href="mailto:Snc@sureonesolutions.com" id="f-email-display">Snc@sureonesolutions.com</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4 id="leave-review-text" style="margin-bottom: 15px;">Leave a Review</h4>
+                    <p id="leave-review-sub" style="color: var(--text-muted); margin: 0 auto 20px auto; font-size: 0.9rem; line-height: 1.4; text-align: center; max-width: 250px;">To help us maintain our standard of excellence, we value your feedback. Please share your experience:</p>
+                    <div class="review-cta-container">
+                        <a href="https://g.page/r/CU-Q8A315w1WEBM/review" target="_blank" class="btn-review" aria-label="Google Review">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/186J6U5bET/?mibextid=wwXIfr/reviews" target="_blank" class="btn-review" aria-label="Facebook Page">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sureone_solutions?igsh=azRwbzExZ2I3aDRk&utm_source=qr" target="_blank" class="btn-review" aria-label="Instagram Profile">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
             <div class="footer-bottom reveal">
                 <p id="f-copy">© 2026 SureOne Solutions, LLC. All Rights Reserved.</p>
             </div>
@@ -476,27 +733,77 @@
                 pillar3Text: "Proudly serving the diverse debris and junk removal needs of homeowners and businesses throughout the Chicagoland area.",
                 servicesTitle: "Our Expertise",
                 servicesSubtitle: "Tailored solutions for residential and commercial properties.",
+                s1Title: "Full Clean-outs", s1Desc: "Complete basement, garage, office, and estate clearing.",
+                s2Title: "Junk Removal", s2Desc: "Efficient, responsible removal of appliances, furniture, and debris.",
+                s3Title: "Deep Cleaning", s3Desc: "Move-in/out and property restoration cleaning.",
+                s4Title: "Light Demolition", s4Desc: "Safe, controlled teardowns of small structures.",
+                s5Title: "Light Hauling", s5Desc: "Reliable point-to-point transport for materials and small loads.",
+                s6Title: "Snow Removal", s6Desc: "Prompt winter maintenance for driveways and walkways.",
                 quoteTitle: "Start Your Project",
+                lFname: "First Name", lLname: "Last Name", lEmail: "Email Address", lPhone: "Phone Number",
+                lSelServices: "Select Services", lDetails: "Project Details", lPhotos: "Include Photos (Optional)",
+                pDetailsPlaceholder: "Please describe your project...",
+                btnChoose: "Choose Photos",
+                noFiles: "No files selected",
+                filesCount: "files selected",
+                pPhotoLimit: "Maximum 5 photos. Each file cannot exceed 10MB.",
                 fSubmit: "Submit Request",
-                fCopy: "© 2026 SureOne Solutions, LLC. All Rights Reserved."
+                fContactTitle: "Contact Us", fArea: "Service Area",
+                area1: "Chicago", area2: "Northwest Suburbs", area3: "South Suburbs", area4: "Western Suburbs",
+                fCopy: "© 2026 SureOne Solutions, LLC. All Rights Reserved.",
+                reviewSectionTitle: "The SureOne Promise",
+                reviewSectionSubtitle: "Why homeowners and businesses across Chicagoland trust us.",
+                promise1Title: "Fully Insured",
+                promise1Desc: "We maintain comprehensive liability insurance, ensuring the highest level of protection and security for your property throughout our service.",
+                promise2Title: "Reliable Timing",
+                promise2Desc: "Your schedule is our priority. We offer accurate arrival windows and dedicated communication to keep you informed at every step.",
+                promise3Title: "Transparent Pricing",
+                promise3Desc: "Integrity is the foundation of our pricing model. We provide honest, definitive estimates for every project to ensure a seamless experience.",
+                leaveReviewText: "Leave a Review",
+                leaveReviewSub: "To help us maintain our standard of excellence, we value your feedback. Please share your experience:"
             },
             es: {
                 heroTitle: "Servicio de Limpieza de Escombros de Élite en Chicagoland",
                 heroText: "SureOne Solutions es el proveedor líder en limpieza experta, eliminación de escombros y limpieza de precisión. Transformamos espacios con eficiencia y confiabilidad.",
                 heroBtn: "Solicite una Cotización Gratis",
                 aboutTitle: "Sobre Nosotros",
-                aboutIntro: "SureOne Solutions es una empresa de servicios de propiedad local basada en la integridad y la experiencia profesional. Ayudamos a los propietarios y empresas a reclamar su espacio.",
+                aboutIntro: "SureOne Solutions es una empresa local basada en la integridad y la experiencia profesional. Ayudamos a los propietarios y empresas a reclamar su espacio con un cuidado meticuloso.",
                 pillar1Title: "Nuestra Misión",
-                pillar1Text: "Restaurar la tranquilidad de nuestros clientes mediante una eliminación responsable y un servicio de alta calidad y confiable.",
+                pillar1Text: "Restaurar la tranquilidad de nuestros clientes mediante una eliminación responsable y un servicio excepcional, de alta calidad y confiable.",
                 pillar2Title: "Nuestro Equipo",
                 pillar2Text: "Un grupo dedicado de expertos profesionales y trabajadores comprometidos a completar cada trabajo con una precisión absoluta e inigualable.",
                 pillar3Title: "Enfoque Local",
-                pillar3Text: "Orgullosamente sirviendo las diversas necesidades de remoción de escombros y desechos de propietarios y empresas en todo Chicagoland.",
+                pillar3Text: "Orgullosamente sirviendo las diversas necesidades de remoción de basura y escombros de propietarios y empresas en todo el área de Chicagoland.",
                 servicesTitle: "Nuestra Experiencia",
                 servicesSubtitle: "Soluciones a medida para propiedades residenciales y comerciales.",
+                s1Title: "Limpiezas Completas", s1Desc: "Limpieza completa de sótanos, garajes, oficinas y patrimons.",
+                s2Title: "Eliminación de Basura", s2Desc: "Retiro eficiente y responsable de electrodomésticos, muebles y escombros.",
+                s3Title: "Limpieza Profunda", s3Desc: "Limpieza para mudanzas y restauración de propiedades.",
+                s4Title: "Demolición Ligera", s4Desc: "Desmantelamiento seguro y controlado de estructuras pequeñas.",
+                s5Title: "Transporte Ligero", s5Desc: "Transporte confiable de punto a punto para materiales y cargas pequeñas.",
+                s6Title: "Remoción de Nieve", s6Desc: "Mantenimiento invernal rápido para entradas y caminos.",
                 quoteTitle: "Inicie su Proyecto",
+                lFname: "Nombre", lLname: "Apellido", lEmail: "Correo Electrónico", lPhone: "Número de Teléfono",
+                lSelServices: "Seleccionar Servicios", lDetails: "Detalles del Proyecto", lPhotos: "Incluir Fotos (Opcional)",
+                pDetailsPlaceholder: "Por favor describa su proyecto...",
+                btnChoose: "Elegir Fotos",
+                noFiles: "No se han seleccionado archivos",
+                filesCount: "archivos seleccionados",
+                pPhotoLimit: "Máximo 5 fotos. Cada archivo no puede exceder los 10MB.",
                 fSubmit: "Enviar Solicitud",
-                fCopy: "© 2026 SureOne Solutions, LLC. Todos los derechos reservados."
+                fContactTitle: "Contáctenos", fArea: "Área de Servicio",
+                area1: "Chicago", area2: "Suburbios del Noroeste", area3: "Suburbios del Sur", area4: "Suburbios del Oeste",
+                fCopy: "© 2026 SureOne Solutions, LLC. Todos los derechos reservados.",
+                reviewSectionTitle: "La Promesa SureOne",
+                reviewSectionSubtitle: "Por qué los propietarios y empresas de todo Chicagoland confían en nosotros.",
+                promise1Title: "Totalmente Asegurado",
+                promise1Desc: "Contamos con un seguro de responsabilidad civil completo, garantizando la máxima protección y tranquilidad para su propiedad durante todo nuestro servicio.",
+                promise2Title: "Sincronización Confiable",
+                promise2Desc: "Su horario es nuestra prioridad. Ofrecemos ventanas de llegada precisas y una comunicación dedicada para mantenerlo informado en cada paso.",
+                promise3Title: "Precios Transparentes",
+                promise3Desc: "La integridad es la base de nuestro modelo de precios. Proporcionamos presupuestos honestos y definitivos para cada proyecto para garantizar una experiencia sin problemas.",
+                leaveReviewText: "Dejar una Reseña",
+                leaveReviewSub: "Para ayudarnos a mantener nuestro estándar de excelencia, valoramos sus comentarios. Por favor comparta su experiencia:"
             }
         };
 
@@ -516,8 +823,40 @@
             document.getElementById('services-title').innerText = data.servicesTitle;
             document.getElementById('services-subtitle').innerText = data.servicesSubtitle;
             document.getElementById('quote-title').innerText = data.quoteTitle;
+            document.getElementById('l-fname').innerText = data.lFname;
+            document.getElementById('l-lname').innerText = data.lFname;
+            document.getElementById('l-email').innerText = data.lEmail;
+            document.getElementById('l-phone').innerText = data.lPhone;
+            document.getElementById('l-sel-services').innerText = data.lSelServices;
+            document.getElementById('l-details').innerText = data.lDetails;
+            document.getElementById('p-details').placeholder = data.pDetailsPlaceholder;
+            document.getElementById('l-photos').innerText = data.lPhotos;
+            document.getElementById('btn-choose').innerText = data.btnChoose;
+            document.getElementById('p-photo-limit').innerText = data.pPhotoLimit;
             document.getElementById('f-submit').innerText = data.fSubmit;
+            document.getElementById('f-contact-title').innerText = data.fContactTitle;
+            document.getElementById('f-area').innerText = data.fArea;
+            document.getElementById('area1').innerText = data.area1;
+            document.getElementById('area2').innerText = data.area2;
+            document.getElementById('area3').innerText = data.area3;
+            document.getElementById('area4').innerText = data.area4;
             document.getElementById('f-copy').innerText = data.fCopy;
+            document.getElementById('review-section-title').innerText = data.reviewSectionTitle;
+            document.getElementById('review-section-subtitle').innerText = data.reviewSectionSubtitle;
+            document.getElementById('promise-1-title').innerText = data.promise1Title;
+            document.getElementById('promise-1-desc').innerText = data.promise1Desc;
+            document.getElementById('promise-2-title').innerText = data.promise2Title;
+            document.getElementById('promise-2-desc').innerText = data.promise2Desc;
+            document.getElementById('promise-3-title').innerText = data.promise3Title;
+            document.getElementById('promise-3-desc').innerText = data.promise3Desc;
+            document.getElementById('leave-review-text').innerText = data.leaveReviewText;
+            document.getElementById('leave-review-sub').innerText = data.leaveReviewSub;
+            updateFileStatus();
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate').replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+                if (data[key]) el.innerText = data[key];
+            });
+            updateDetails();
         }
 
         const langBtn = document.getElementById('lang-toggle');
@@ -534,19 +873,97 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach((el) => { observer.observe(el); });
 
+        const phoneInput = document.getElementById('p-phone');
+        phoneInput.addEventListener('input', function(e) {
+            let x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+            e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+        });
+
         let selectedServices = [];
         function toggleService(element) {
             const serviceName = element.getAttribute('data-name');
+            const checkbox = document.querySelector(`input[data-service="${serviceName}"]`);
             if (element.classList.contains('selected')) {
                 element.classList.remove('selected');
+                checkbox.checked = false;
                 selectedServices = selectedServices.filter(item => item !== serviceName);
             } else {
                 element.classList.add('selected');
+                checkbox.checked = true;
                 selectedServices.push(serviceName);
+                document.getElementById('quote').scrollIntoView({ behavior: 'smooth' });
             }
-            const detailsArea = document.getElementById('p-details');
-            detailsArea.value = "I am interested in: " + selectedServices.join(', ');
+            updateDetails();
         }
+
+        function syncService(checkbox) {
+            const serviceName = checkbox.getAttribute('data-service');
+            const card = document.querySelector(`.service-card[data-name="${serviceName}"]`);
+            if (checkbox.checked) {
+                card.classList.add('selected');
+                if(!selectedServices.includes(serviceName)) selectedServices.push(serviceName);
+            } else {
+                card.classList.remove('selected');
+                selectedServices = selectedServices.filter(item => item !== serviceName);
+            }
+            updateDetails();
+        }
+
+        function updateDetails() {
+            const detailsArea = document.getElementById('p-details');
+            const isSpanish = langBtn.innerText === "English"; 
+            const prefix = isSpanish ? "Me interesan los siguientes servicios: " : "I am interested in the following services: ";
+            const suffix = isSpanish ? ".\n\nDetalles adicionales: " : ".\n\nAdditional details: ";
+            if (selectedServices.length > 0) detailsArea.value = prefix + selectedServices.join(', ') + suffix;
+            else detailsArea.value = "";
+        }
+
+        const photoInput = document.getElementById('p-photos');
+        const previewContainer = document.getElementById('photo-preview');
+        const fileStatus = document.getElementById('file-status');
+        let uploadedFiles = [];
+
+        function updateFileStatus() {
+            const isSpanish = langBtn.innerText === "English";
+            const data = isSpanish ? translations.es : translations.en;
+            if (uploadedFiles.length === 0) fileStatus.innerText = data.noFiles;
+            else fileStatus.innerText = `${uploadedFiles.length} ${data.filesCount}`;
+        }
+
+        photoInput.addEventListener('change', (e) => {
+            const files = Array.from(e.target.files);
+            files.forEach(file => {
+                if (uploadedFiles.length >= 5) { alert("Maximum 5 photos allowed."); return; }
+                if (file.size > 10 * 1024 * 1024) { alert(`${file.name} is too large.`); return; }
+                uploadedFiles.push(file);
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    const div = document.createElement('div');
+                    div.className = 'preview-item';
+                    div.innerHTML = `<img src="${event.target.result}"><button class="remove-photo" onclick="removeFile('${file.name}')" aria-label="Remove photo">×</button>`;
+                    previewContainer.appendChild(div);
+                };
+                reader.readAsDataURL(file);
+            });
+            photoInput.value = '';
+            updateFileStatus();
+        });
+
+        window.removeFile = (fileName) => {
+            uploadedFiles = uploadedFiles.filter(f => f.name !== fileName);
+            previewContainer.innerHTML = '';
+            uploadedFiles.forEach(file => {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    const div = document.createElement('div');
+                    div.className = 'preview-item';
+                    div.innerHTML = `<img src="${event.target.result}"><button class="remove-photo" onclick="removeFile('${file.name}')">×</button>`;
+                    previewContainer.appendChild(div);
+                };
+                reader.readAsDataURL(file);
+            });
+            updateFileStatus();
+        };
     </script>
 </body>
 </html>
